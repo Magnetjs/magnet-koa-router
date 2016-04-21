@@ -25,7 +25,8 @@
   ],
   "dependencies": {
     "boom": "^3.1.2",
-    "koa-router": "^7.0.1"
+    "koa-router": "^7.0.1",
+    "magnet-core": "^1.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",
