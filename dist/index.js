@@ -14,9 +14,25 @@ var _koaRouter = require('koa-router');
 
 var _koaRouter2 = _interopRequireDefault(_koaRouter);
 
+var _path = require('path');
+
+var _path2 = _interopRequireDefault(_path);
+
+var _requireAll = require('require-all');
+
+var _requireAll2 = _interopRequireDefault(_requireAll);
+
 var _boom = require('boom');
 
 var _boom2 = _interopRequireDefault(_boom);
+
+var _fs = require('mz/fs');
+
+var _fs2 = _interopRequireDefault(_fs);
+
+var _forOwn = require('lodash/forOwn');
+
+var _forOwn2 = _interopRequireDefault(_forOwn);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46,8 +62,22 @@ var Router = function (_Base) {
             switch (_context.prev = _context.next) {
               case 0:
                 this.app.router = (0, _koaRouter2.default)();
+                this.app.application.use(this.app.router.routes());
+                this.app.application.use(this.app.router.allowedMethods({
+                  throw: true,
+                  notImplemented: function notImplemented() {
+                    return new _boom2.default.notImplemented();
+                  },
+                  methodNotAllowed: function methodNotAllowed() {
+                    return new _boom2.default.methodNotAllowed();
+                  }
+                }));
 
-              case 1:
+                if (!this.app.controllers) {
+                  this.app.controllers = {};
+                }
+
+              case 4:
               case 'end':
                 return _context.stop();
             }
@@ -65,22 +95,32 @@ var Router = function (_Base) {
     key: 'start',
     value: function () {
       var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee2() {
+        var _this2 = this;
+
+        var folderPath, exists, files;
         return regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                this.app.application.use(this.app.router.routes());
-                this.app.application.use(this.app.router.allowedMethods({
-                  throw: true,
-                  notImplemented: function notImplemented() {
-                    return new _boom2.default.notImplemented();
-                  },
-                  methodNotAllowed: function methodNotAllowed() {
-                    return new _boom2.default.methodNotAllowed();
-                  }
-                }));
+                folderPath = _path2.default.resolve(process.cwd(), this.config.controllerPath || 'server/controllers');
+                _context2.next = 3;
+                return _fs2.default.exists(folderPath);
 
-              case 2:
+              case 3:
+                exists = _context2.sent;
+
+                if (exists) {
+                  files = (0, _requireAll2.default)(folderPath);
+
+
+                  (0, _forOwn2.default)(files, function (controllers) {
+                    (0, _forOwn2.default)(controllers, function (controller, controllerName) {
+                      _this2.app.controllers[controllerName] = controller(_this2.app);
+                    });
+                  });
+                }
+
+              case 5:
               case 'end':
                 return _context2.stop();
             }
@@ -100,3 +140,4 @@ var Router = function (_Base) {
 }(_base2.default);
 
 exports.default = Router;
+//# sourceMappingURL=index.js.map
