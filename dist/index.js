@@ -140,4 +140,3 @@ var Router = function (_Base) {
 }(_base2.default);
 
 exports.default = Router;
-//# sourceMappingURL=index.js.map
