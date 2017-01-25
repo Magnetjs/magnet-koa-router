@@ -802,9 +802,9 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
-boom@^3.1.2:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/boom/-/boom-3.2.2.tgz#0f0cc5d04adc5003b8c7d71f42cca7271fef0e78"
+boom@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/boom/-/boom-4.2.0.tgz#c1a74174b11fbba223f6162d4fd8851a1b82a536"
   dependencies:
     hoek "4.x.x"
 
@@ -2007,7 +2007,7 @@ lodash@^3.6.0:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.0.0, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.5.1:
+lodash@^4.0.0, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.5.1:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -2025,9 +2025,11 @@ lru-cache@^2.5.0:
   version "2.7.3"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-2.7.3.tgz#6d4524e8b955f95d4f5b58851ce21dd72fb4e952"
 
-magnet-core@^1.1.0:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/magnet-core/-/magnet-core-1.2.1.tgz#e7e89502bd5103bb9439fa7c9f26d9c45a324042"
+magnet-core@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/magnet-core/-/magnet-core-2.0.0.tgz#8316405e14b641d62ed6a11e9faa7990a452ead2"
+  dependencies:
+    lodash "^4.17.4"
 
 map-stream@~0.1.0:
   version "0.1.0"
