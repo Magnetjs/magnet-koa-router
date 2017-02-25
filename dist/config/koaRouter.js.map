@@ -1,0 +1,1 @@
+{"version":3,"file":"koaRouter.js","sourceRoot":"","sources":["../../src/config/koaRouter.ts"],"names":[],"mappings":";;AAAA,+BAGa;AAEb,kBAAe;IACb,oBAAoB;IAEpB,cAAc,EAAE;QACd,KAAK,EAAE,IAAI;QACX,cAAc,EAAE,MAAM,IAAI,qBAAc,EAAE;QAC1C,gBAAgB,EAAE,MAAM,IAAI,uBAAgB,EAAE;KAC/C;CACF,CAAA"}
