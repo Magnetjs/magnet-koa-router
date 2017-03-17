@@ -15,10 +15,9 @@ class KoaRouter extends module_1.Module {
     get defaultConfig() { return __dirname; }
     setup() {
         return __awaiter(this, void 0, void 0, function* () {
-            this.app.koaRouter = new Router(this.config);
-            this.app.router = this.app.koaRouter;
-            this.app.koa.use(this.app.koaRouter.routes());
-            this.app.koa.use(this.app.koaRouter.allowedMethods(this.config.allowedMethods));
+            this.insert(new Router(this.config));
+            this.app.koa.use(this.app.koa_router.routes());
+            this.app.koa.use(this.app.koa_router.allowedMethods(this.config.allowedMethods));
         });
     }
 }
