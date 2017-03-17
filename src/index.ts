@@ -1,16 +1,15 @@
 import { Module } from 'magnet-core/module'
 import * as Router from 'koa-router'
 
-import defaultConfig from './config/koaRouter'
-
 export default class KoaRouter extends Module {
-  async setup () {
-    const config = this.prepareConfig('koaRouter', defaultConfig)
+  get moduleName () { return 'koa_router' }
+  get defaultConfig () { return __dirname }
 
-    this.app.koaRouter = new Router(config)
+  async setup () {
+    this.app.koaRouter = new Router(this.config)
     this.app.router = this.app.koaRouter
 
     this.app.koa.use(this.app.koaRouter.routes())
-    this.app.koa.use(this.app.koaRouter.allowedMethods(config.allowedMethods))
+    this.app.koa.use(this.app.koaRouter.allowedMethods(this.config.allowedMethods))
   }
 }

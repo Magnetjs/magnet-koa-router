@@ -10,15 +10,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const module_1 = require("magnet-core/module");
 const Router = require("koa-router");
-const koaRouter_1 = require("./config/koaRouter");
 class KoaRouter extends module_1.Module {
+    get moduleName() { return 'koa_router'; }
+    get defaultConfig() { return __dirname; }
     setup() {
         return __awaiter(this, void 0, void 0, function* () {
-            const config = this.prepareConfig('koaRouter', koaRouter_1.default);
-            this.app.koaRouter = new Router(config);
+            this.app.koaRouter = new Router(this.config);
             this.app.router = this.app.koaRouter;
             this.app.koa.use(this.app.koaRouter.routes());
-            this.app.koa.use(this.app.koaRouter.allowedMethods(config.allowedMethods));
+            this.app.koa.use(this.app.koaRouter.allowedMethods(this.config.allowedMethods));
         });
     }
 }
