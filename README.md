@@ -1,4 +1,6 @@
 ### Usage
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Magnetjs/magnet-router.svg)](https://greenkeeper.io/)
 All router api should refer [koa-router](https://github.com/alexmingoia/koa-router)
 
 Basic
