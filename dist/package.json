@@ -1,6 +1,6 @@
 {
   "name": "magnet-koa-router",
-  "version": "4.0.0",
+  "version": "0.1.0",
   "description": "Magnet adapter for koa-router",
   "keywords": [
     "magnet",

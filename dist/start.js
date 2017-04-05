@@ -9,21 +9,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const module_1 = require("magnet-core/module");
-const Router = require("koa-router");
-class MagnetKoaRouter extends module_1.Module {
+class MagnetKoaRouterStart extends module_1.Module {
     get moduleName() { return 'koa_router'; }
     get defaultConfig() { return __dirname; }
     setup() {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('koa router', this.config);
-            this.insert(new Router());
-            // this.app.koa.use(this.app.koa_router.routes())
-            console.log('this.config.allowedMethods', this.config.allowedMethods);
-            if (this.config.allowedMethods) {
-                this.app.koa.use(this.app.koa_router.allowedMethods(this.config.allowedMethods));
-            }
+            console.log('koa router use ');
+            // console.log('this.app.koa_router', this.app.koa_router)
+            this.app.koa.use(this.app.koa_router.routes());
         });
     }
 }
-exports.default = MagnetKoaRouter;
-//# sourceMappingURL=index.js.map
+exports.default = MagnetKoaRouterStart;
+//# sourceMappingURL=start.js.map
