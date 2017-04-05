@@ -1,0 +1,24 @@
+{
+  "generator-magnetjs": {
+    "promptValues": {
+      "npmModule": "koa-router",
+      "moduleName": "magnet-koa-router",
+      "name": "Kieve Chua",
+      "email": "kievechua@gmail.com",
+      "website": "https://github.com/kievechua",
+      "license": "MIT",
+      "language": "ts",
+      "includeFly": true,
+      "fromDist": true
+    },
+    "npmModule": "koa-router",
+    "moduleName": "magnet-koa-router",
+    "name": "Kieve Chua",
+    "email": "kievechua@gmail.com",
+    "website": "https://github.com/kievechua",
+    "license": "MIT",
+    "language": "ts",
+    "includeFly": true,
+    "fromDist": true
+  }
+}
