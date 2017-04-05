@@ -6,8 +6,6 @@ export default class MagnetKoaRouterStart extends Module {
   get defaultConfig () { return __dirname }
 
   async setup () {
-    console.log('koa router use ')
-    // console.log('this.app.koa_router', this.app.koa_router)
     this.app.koa.use(this.app.koa_router.routes())
   }
 }
