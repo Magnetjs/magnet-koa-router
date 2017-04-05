@@ -14,8 +14,6 @@ class MagnetKoaRouterStart extends module_1.Module {
     get defaultConfig() { return __dirname; }
     setup() {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('koa router use ');
-            // console.log('this.app.koa_router', this.app.koa_router)
             this.app.koa.use(this.app.koa_router.routes());
         });
     }

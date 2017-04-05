@@ -15,10 +15,7 @@ class MagnetKoaRouter extends module_1.Module {
     get defaultConfig() { return __dirname; }
     setup() {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('koa router', this.config);
             this.insert(new Router());
-            // this.app.koa.use(this.app.koa_router.routes())
-            console.log('this.config.allowedMethods', this.config.allowedMethods);
             if (this.config.allowedMethods) {
                 this.app.koa.use(this.app.koa_router.allowedMethods(this.config.allowedMethods));
             }
