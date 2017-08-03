@@ -1,6 +1,6 @@
 {
   "name": "magnet-koa-router",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "description": "Magnet adapter for koa-router",
   "keywords": [
     "magnet",
@@ -21,8 +21,8 @@
   },
   "dependencies": {
     "koa-router": "^7.1.1",
-    "magnet-core": "^3.8.1",
-    "magnet-koa": "^1.4.0"
+    "magnet-core": "^4.0.1",
+    "magnet-koa": "^2.0.0"
   },
   "devDependencies": {
     "fly": "^2.0.5",
