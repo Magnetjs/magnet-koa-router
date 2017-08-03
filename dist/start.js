@@ -10,8 +10,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const module_1 = require("magnet-core/module");
 class MagnetKoaRouterStart extends module_1.Module {
-    get moduleName() { return 'koa_router'; }
-    get defaultConfig() { return __dirname; }
+    init() {
+        this.moduleName = 'koa_router';
+        this.defaultConfig = __dirname;
+    }
     setup() {
         return __awaiter(this, void 0, void 0, function* () {
             this.app.koa.use(this.app.koa_router.routes());

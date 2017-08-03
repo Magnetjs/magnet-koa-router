@@ -2,8 +2,10 @@ import { Module } from 'magnet-core/module'
 import * as Router from 'koa-router'
 
 export default class MagnetKoaRouter extends Module {
-  get moduleName () { return 'koa_router' }
-  get defaultConfig () { return __dirname }
+  init () {
+    this.moduleName = 'koa-router'
+    this.defaultConfig = __dirname
+  }
 
   async setup () {
     this.insert(new Router())
