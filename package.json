@@ -20,7 +20,7 @@
     "dist": "npm run build && cd dist && npm publish"
   },
   "dependencies": {
-    "koa-router": "^7.1.1",
+    "koa-router": "^7.2.1",
     "magnet-core": "^4.0.1",
     "magnet-koa": "^2.0.0"
   },
